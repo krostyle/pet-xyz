@@ -9,7 +9,7 @@ export class Animal extends Propietario {
     }
 
     get tipo() {
-        return `El tipo del animal es un : ${this._tipo}`;
+        return `El tipo de animal es un : ${this._tipo}`;
     }
 
     set tipo(tipo) {

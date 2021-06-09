@@ -11,11 +11,11 @@ const result = document.getElementById('resultado');
 
 btn.addEventListener('click', (e) => {
     e.preventDefault();
-    let propietario1 = new Propietario(propietario.value, telefono.value, direccion.value);
-    let animal = new Animal(propietario1._nombre, propietario1._telefono, propietario1._direccion, tipo.value)
-    let objMascota = new Mascota(animal._nombre, animal._telefono, animal._direccion, animal.tipo, enfermedad.value)
+    let propietario1 = new Propietario(propietario.value, direccion.value, telefono.value);
+    let animal = new Animal(propietario1._nombre, propietario1._direccion, propietario1._telefono, tipo.value)
+    let objMascota = new Mascota(animal._nombre, animal._direccion, animal._telefono, animal.tipo, nombreMascota.value, enfermedad.value)
     createData(objMascota);
-    cleanForm();
+    // cleanForm();
 })
 
 
@@ -35,7 +35,7 @@ const createData = (objMascota) => {
     const li1 = document.createElement('li')
     const li2 = document.createElement('li')
     li1.appendChild(document.createTextNode(`${mascota.datosPropietario()}`))
-    li2.appendChild(document.createTextNode(`${mascota.tipo}, mientras que el nombre de la mascota es : ${mascota.nombreMascota} y la enfermedad es : ${mascota.enfermedad}`))
+    li2.appendChild(document.createTextNode(`${mascota._tipo}, mientras que el nombre de la mascota es : ${mascota.nombreMascota} y la enfermedad es : ${mascota.enfermedad}`))
     ul.appendChild(li1)
     ul.appendChild(li2)
     result.appendChild(ul);
